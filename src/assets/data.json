@@ -1,0 +1,296 @@
+{
+  "JOB_HISTORY": [
+    {
+      "current":true,
+      "period": "Jan 2023 - Feb 2026",
+      "title": "Frontend Developer - ReactJS and React Native",
+      "company": "Panasonic Appliances R&D Center",
+      "jobScope": [
+        "Designed and built React Native mobile applications from the ground up, ensuring cross-platform compatibility and native performance.",
+        "Updated and maintained existing mobile applications with new features and performance improvements.",
+        "Integrated native modules into React Native to enable seamless Bluetooth communication between mobile devices and IoT hardware",
+        "Develop IoT gateway system, including a Flask-based backend API and a ReactJS-powered web portal.",
+        "Built an interactive web dashboard for Smart Irrigation Monitoring Portal using ReactJS."
+      ]
+    },
+    {
+      "current":false,
+      "period": "Jan 2022 - Dec 2022",
+      "title": "Junior Frontend Developer - ReactJS and React Native",
+      "company": "Goviral Lab",
+      "jobScope": [
+        "Handle mobile and web application development",
+        "Developing client's projects included user platform, merchant platform and admin panel based on client requirements.",
+        "Work closely with the UI team and backend team to ensure development following schedule and requirements.",
+        "Develop reusable functions / components that are reusable in different projects.",
+        "Handle for deployment - deploy web-application using digital ocean and netlify, submit mobile apps to Huawei, Apple, and Google store.",
+        "Yolo.my and KATCH mobile app"
+      ]
+    },
+    {
+      "current":false,
+      "period":  "May 2020 - Jan 2022",
+      "title": "Mobile Application Developer and Support",
+      "company": "Go To Solutions",
+      "jobScope": [
+        "Develop new features, bugs solving and maintenance of existing mobile applications",
+        "Work closely with the customer service team to resolve production issues.",
+        "Handle for monthly deployment for production."
+      ]
+    },
+    {
+      "current":false,
+      "period":  "Feb 2019 - Aug 2019",
+      "title": "Intership (Application and Game Development)",
+      "company": "Out Boxed Ideas Lab",
+      "jobScope": [
+        "Create prototype application to receive feedback from client and allow company internal staff to login and view all the comment and details.",
+        "Create some mini games and application for event usage.",
+        "Helping on event execution."
+      ]
+    }
+  ],
+  "TECH_STACK":[
+    {
+      "name": "React Native",
+      "level": "Expert",
+      "color": "text-blue-400"
+    },
+    {
+      "name": "ReactJS",
+      "level": "Expert",
+      "color": "text-purple-400"
+    },
+    {
+      "name": "NodeJS",
+      "level": "Intermediate",
+      "color": "text-green-400"
+    },
+    {
+      "name": "Python/Flask",
+      "level": "Intermediate",
+      "color": "text-yellow-400"
+    },
+    {
+      "name": "Android/IOS Native",
+      "level": "To be improve",
+      "color": "text-red-400"
+    }
+  ],
+  "PROGRAMMING_SKILLS": [
+    { "skill": "JavaScript", "level": 4 },
+    { "skill": "Typescript", "level": 3 },
+    { "skill": "HTML/CSS", "level": 3 },
+    { "skill": "Python", "level": 3 },
+    { "skill": "C# .Net", "level": 2 }
+  ],
+  "PORTFOLIO": [
+    {
+      "appName": "YOLO [Company Project]",
+      "URL": "https://yolo.my/",
+      "tags": ["ReactJS", "NodeJS"],
+      "shortDescription": "YOLO.my is a B2C platform (web application) developed as a company project, designed to empower merchants to monetize their experiences or promoting their shops. This innovative web app offers a comprehensive ecosystem, providing users with a one-stop destination for booking and discovering a wide array of travel experiences and activities. As a frontend developer on the project, I played a crucial role in creating and maintaining the user portal, merchant portal, and admin portal, ensuring a secure and user-friendly platform for booking and discovering diverse travel experiences.",
+      "descriptions": [
+        {
+          "title": "Experience Marketplace / User Portal:",
+          "descriptions": [
+            "Provides users with a diverse range of travel experiences and activities to book and explore"
+          ]
+        },
+        {
+          "title": "Merchant Portal",
+          "descriptions": [
+            "Empowers merchants to upload and manage their experiences details.",
+            "View all booking list and booked user's details.",
+            "View sales report"
+          ]
+        },
+        {
+          "title": "Admin Portal:",
+          "descriptions": [
+            "Ensures the reliability and safety of user transactions by meticulously verifying merchant information.",
+            "View each merchant sales report."
+          ]
+        }
+      ]
+    },
+    {
+      "appName": "KATCH [Company Project]",
+      "URL": "https://apps.apple.com/sg/app/katch/id1606341748",
+      "tags": ["React Native"],
+      "shortDescription": "Katch is a mobile application project developed using React Native and uploaded to Google Playstore and IOS App Store. Katch is a platform for every info you need on Health, Fitness and Wellness. Katch wants to easily connect everyday users to the service providers, ranging from personal trainers, gym centres, wellness centres, places of interests, medical providers. With a finger tap, Katch makes it seamless for you to see reviews, locations, terms of a provider to minimise (bad) surprises.",
+      "descriptions": [
+        {
+          "title": "User Mobile Application",
+          "descriptions": [
+            "Allow user to view all the classes category.",
+            "Allow user to search their nearest gym by using their geolocation.",
+            "Virtual wallet that allow user to top-up and store credit in the wallet for faster purchasing.",
+            "Allow user to verify their account by uploading their face image.",
+            "Allow user to generate QR code to enter to the gym if the face verification for door lock is not working."
+          ]
+        },
+        {
+          "title": "Admin Portal:",
+          "descriptions": [
+            "Allow admin to update image / user account from this portal.",
+            "Allow admin to create staff account.",
+            "Allow admin to add new category for the session.",
+            "Allow admin to create new gym and modify the price and available time slot.",
+            "Allow admin to create new voucher for discount."
+          ]
+        }
+      ]
+    },
+    {
+      "appName": "S.iCity [Company Project]",
+      "shortDescription": "S.iCity Mobile Application and its web-based counterpart. These are company projects developed using React Native for the mobile app and ReactJS for the web app. They provide users with a comprehensive platform for monitoring data from various installed sensors and taking control of Internet of Things (IoT) devices, all within a seamless and user-friendly interface.",
+      "tags": ["React Native", "ReactJS"],
+      "URL":"https://apps.apple.com/sg/app/s-icity/id1489899390",
+      "descriptions": [
+        {
+          "title": "Sensor Data Monitoring",
+          "descriptions": [
+            "Both the S.icity Mobile Application and the web app offer real-time monitoring of data from a range of sensors, providing valuable insights into various aspects of users' surroundings."
+          ]
+        },
+        {
+          "title": "IoT Device Control",
+          "descriptions": [
+            "Users can remotely control their IoT devices using both platforms, enhancing convenience and control within their homes and workplaces."
+          ]
+        },
+        {
+          "title": "React Native Mobile Development",
+          "descriptions": [
+            "The mobile app is built using React Native, ensuring a responsive and native-like experience for both Android and iOS users. The web app leverages ReactJS, with communication facilitated through AWS, to provide similar functionality and accessibility through web browsers."
+          ]
+        },
+        {
+          "title": "Customization and Alerts",
+          "descriptions": [
+            "Users have the flexibility to customize the applications to meet their unique needs. They can set up alerts and notifications, ensuring they are always informed about important sensor data changes and allowing for automated actions based on specific criteria."
+          ]
+        },
+        {
+          "title": "Integration of IoT Ecosystem through AWS IOT",
+          "descriptions": [
+            "Both platforms seamlessly integrate with a variety of IoT devices and ecosystems, with AWS providing the communication infrastructure. This creates unified interfaces for users to manage their connected devices."
+          ]
+        },
+        {
+          "title": "Scalability and Future Expansion",
+          "descriptions": [
+            "The architectures of both the mobile and web apps are designed with scalability in mind, positioning them for future growth and support for an expanding array of sensors and IoT devices."
+          ]
+        }
+      ]
+    },
+    {
+      "appName": "MALA Hotpot POS",
+      "tags": ["React Native", "ReactJS", "NodeJS","MongoDB"],
+      "shortDescription": "A mobile application (Android) using React Native for the frontend, Node.js for the backend, and MongoDB for the database. This application serves as an efficient and user-friendly Point of Sale (POS) system tailored to the needs of Mala Hotpot shops.",
+      "descriptions": [
+        {
+          "title": "User-Friendly Interface",
+          "descriptions": [
+            "Provides a straightforward interface for users to access sales reports and order histories with date-based search capabilities."
+          ]
+        },
+        {
+          "title": "Seamlessly Receipt Printing",
+          "descriptions": [
+            "Seamlessly integrates with a receipt printer using Bluetooth Low Energy (BLE) technology to automatically print receipts upon order confirmation, enhancing operational efficiency."
+          ]
+        },
+        {
+          "title": "Independent Item Management",
+          "descriptions": [
+            "Empowers users to add or remove items for sale without the need for developer intervention, offering flexibility and autonomy."
+          ]
+        },
+        {
+          "title": "Multiple User Roles",
+          "descriptions": [
+            "Admin: Enables configuration and management of sales items",
+            "Staff: Facilitates order creation and access to order history."
+          ]
+        },
+        {
+          "title": "Multi-Device Access",
+          "descriptions": [
+            "Allows users to log in from multiple devices for collaborative report viewing, enhancing convenience and teamwork."
+          ]
+        },
+        {
+          "title": "CodePush Updates",
+          "descriptions": [
+            "Incorporates the CodePush feature for seamless over-the-air updates, ensuring that the application stays up-to-date without requiring users to reinstall or update the app manually."
+          ]
+        }
+      ]
+    },
+    {
+      "appName": "Location Weather",
+      "tags": ["React Native"],
+      "shortDescription": "This is a simple mobile application using React Native that enables users to effortlessly check the weather for a specific location. This app offers two convenient methods for accessing weather information – users can either input an address or utilize their current location. The application seamlessly integrates with Google Location API to facilitate address-based searches and leverages the user's phone's geolocation capabilities for current location data.",
+      "descriptions": [
+        {
+          "title": "Weather Lookup Options",
+          "descriptions": [
+            "Users can access weather information by either entering an address or utilizing their device's current location."
+          ]
+        },
+        {
+          "title": "Google Location API Integration",
+          "descriptions": [
+            "Seamless integration with Google Location API enables address-based searches, enhancing user experience and accuracy."
+          ]
+        },
+        {
+          "title": "Geolocation Capability",
+          "descriptions": [
+            "Utilizes the device's geolocation feature to determine the user's current location, providing real-time weather data."
+          ]
+        },
+        {
+          "title": "Availability on Google Play Store",
+          "descriptions": [
+            "The application is readily available for download on the Google Play Store, ensuring widespread accessibility for Android users."
+          ]
+        }
+      ]
+    },
+    {
+      "appName": "Card Manager",
+      "tags": ["React Native", "ReactJS", "NodeJS","MongoDB"],
+      "shortDescription": "This straight forward mobile application using React Native that empowers users to efficiently record and track their expenses. This app seamlessly integrates with Firebase, enabling users to securely store their financial records. With the ability to add various types of accounts, be it debit or credit, users can easily trace their expenses and access their current debit account balances. The decision to store data in Firebase ensures peace of mind for users - even if they accidentally format their device or uninstall the app, their records remain accessible through their unique device ID.",
+      "descriptions": [
+        {
+          "title": "Expense Recording",
+          "descriptions": [
+            "Users can effortlessly log their expenses, helping them maintain a clear financial record."
+          ]
+        },
+        {
+          "title": "Account Flexibility",
+          "descriptions": [
+            "The app accommodates different account types, including debit and credit, enabling users to manage their finances with precision."
+          ]
+        },
+        {
+          "title": "Firebase Integration",
+          "descriptions": [
+            "Firebase integration ensures secure data storage, even if users encounter unforeseen circumstances like device formatting or app uninstallation."
+          ]
+        },
+        {
+          "title": "Persistent User Data",
+          "descriptions": [
+            "The use of device IDs guarantees that users can always access their financial records, promoting data continuity."
+          ]
+        }
+      ]
+    }
+  ]
+}

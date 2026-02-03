@@ -1,5 +1,5 @@
 import { Github, Linkedin } from "lucide-react";
-import Logo from "../../public/vite.svg";
+import Logo from "../assets/logo.png";
 
 export default function Hero() {
   return (

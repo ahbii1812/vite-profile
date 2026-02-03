@@ -1,4 +1,4 @@
-import { Github, Phone, Mail, Linkedin, LinkedinIcon } from "lucide-react";
+import { Github, Phone, Mail, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
             href={import.meta.env.VITE_LINKEDIN}
             className="p-4 bg-slate-900 rounded-2xl hover:bg-slate-800 transition-colors text-slate-400 hover:text-white border border-slate-800"
           >
-            <LinkedinIcon size={20} />
+            <Linkedin size={20} />
           </a>
           <a
             target="_blank"

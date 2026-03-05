@@ -52,21 +52,23 @@ export default function Hero() {
             {/* Role line — each word animates individually */}
             <span className="block text-4xl sm:text-5xl lg:text-6xl">
               <span className="hero-word hero-word-1 inline-block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
-                Frontend
+                Frontend-Heavy
               </span>{" "}
+              <br className="hidden sm:block" />
               <span className="hero-word hero-word-2 inline-block bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Developer
+                Fullstack Dev
               </span>
             </span>
           </h1>
 
           {/* Description */}
           <p className="hero-anim hero-anim-4 hero-hl-desc text-base sm:text-lg text-slate-400 max-w-lg leading-relaxed">
-            Frontend Developer with 5+ years of experience in{" "}
-            <strong>React</strong> &amp; <strong>React Native</strong>, and
-            growing expertise in <strong>NodeJS</strong> &amp;{" "}
-            <strong>Flask API</strong>. Focused on building scalable, elegant
-            full-stack applications.
+            5+ years crafting polished, performant interfaces with{" "}
+            <strong>React</strong> &amp; <strong>React Native</strong> —
+            while extending into the backend with{" "}
+            <strong>Node.js</strong> &amp; <strong>Flask</strong>.
+            I care deeply about UX, clean architecture, and shipping
+            products that scale end-to-end.
           </p>
 
           {/* Buttons */}

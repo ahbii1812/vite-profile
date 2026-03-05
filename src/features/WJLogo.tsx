@@ -231,7 +231,7 @@ export default function WJLogo() {
           letterSpacing="6"
           className="wj-label-tag"
         >
-          FRONTEND DEV
+          FULLSTACK DEV
         </text>
       </svg>
     </div>

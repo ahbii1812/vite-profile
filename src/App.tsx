@@ -26,7 +26,8 @@ const App = () => {
       return;
     }
 
-    const revealElements = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    const revealElements =
+      document.querySelectorAll<HTMLElement>("[data-reveal]");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

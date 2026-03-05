@@ -9,7 +9,8 @@ export default function Footer() {
             {import.meta.env.VITE_USERNAME}
           </div>
           <p className="text-slate-300 text-sm max-w-xs">
-            Open for collaboration on React and React Native projects.
+            Open for collaboration on Mobile and Web projects. Let's connect and
+            create something amazing together!
           </p>
         </div>
 

@@ -8,6 +8,8 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+
+
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -84,4 +86,383 @@ body {
     transform: none;
     animation: none;
   }
+}
+
+/* ─── Radar Animation ──────────────────────────────────────────────────── */
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes radar-blip {
+  0%   { opacity: 0; transform: scale(0); }
+  20%  { opacity: 1; transform: scale(1.4); }
+  60%  { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+.radar-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-glow {
+  position: absolute;
+  inset: -12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.radar-base {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    rgba(15,23,42,1) 0%,
+    rgba(15,23,42,0.95) 40%,
+    rgba(30,41,59,0.9) 100%
+  );
+  border: 1px solid rgba(99,160,255,0.15);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(99,160,255,0.08),
+    inset 0 0 40px rgba(0,0,0,0.6),
+    0 0 60px rgba(59,130,246,0.08);
+}
+
+.radar-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(99,160,255,0.12);
+  pointer-events: none;
+}
+
+.radar-line {
+  position: absolute;
+  background: rgba(99,160,255,0.1);
+  pointer-events: none;
+}
+
+.radar-line-h {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.radar-line-v {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.radar-sweep-wrapper {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: radar-sweep 3s linear infinite;
+  transform-origin: center center;
+}
+
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(59, 130, 246, 0.0)  220deg,
+    rgba(59, 130, 246, 0.08) 260deg,
+    rgba(59, 130, 246, 0.20) 290deg,
+    rgba(99, 160, 255, 0.45) 355deg,
+    rgba(147, 197, 253, 0.6) 360deg
+  );
+}
+
+/* Thin bright leading edge */
+.radar-sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 358deg,
+    rgba(147, 197, 253, 0.9) 0deg,
+    transparent 4deg
+  );
+}
+
+.radar-center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #93c5fd;
+  box-shadow: 0 0 8px 3px rgba(147,197,253,0.7);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.radar-blip {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 6px 2px rgba(96,165,250,0.8);
+  transform: translate(-50%, -50%);
+  animation: radar-blip 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radar-sweep-wrapper { animation: none; }
+  .radar-blip { animation: none; opacity: 0.6; }
+}
+
+/* ─── TechStack Card Text Highlight ────────────────────────────────────── */
+
+.tech-card {
+  --card-x: -80%;
+  --card-y: 50%;
+}
+
+.tech-card-title {
+  color: white;
+  transition: color 80ms linear;
+}
+
+.tech-card:hover .tech-card-title {
+  background: radial-gradient(
+    circle 120px at var(--card-x, 50%) var(--card-y, 50%),
+    #38bdf8 0%,
+    #60a5fa 25%,
+    #a5b4fc 50%,
+    #ffffff 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 60ms linear;
+}
+
+/* ─── Hero Text Cursor Highlight ────────────────────────────────────────── */
+
+/*
+  .hero-left tracks the cursor and exposes --hero-x / --hero-y.
+  Default values push the focal point far off-left so text is plain
+  white/slate until the mouse enters.
+*/
+.hero-left {
+  --hero-x: -40%;
+  --hero-y: 50%;
+}
+
+/* Name — white at rest, lights up to sky-blue near cursor */
+.hero-hl-name {
+  background: radial-gradient(
+    circle 220px at var(--hero-x, -40%) var(--hero-y, 50%),
+    #bae6fd 0%,
+    #e0f2fe 30%,
+    #ffffff 55%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 60ms linear;
+}
+
+/* Description — slate at rest, strongs brighten near cursor */
+.hero-hl-desc {
+  transition: color 60ms linear;
+}
+
+.hero-hl-desc strong {
+  color: #cbd5e1; /* slate-300 base — overridden by gradient clip when in range */
+  background: radial-gradient(
+    circle 200px at var(--hero-x, -40%) var(--hero-y, 50%),
+    #7dd3fc 0%,
+    #a5b4fc 35%,
+    #e2e8f0 65%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 60ms linear;
+}
+
+/* ─── WJ Hero Logo ─────────────────────────────────────────────── */
+
+@keyframes wj-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes wj-rotate-cw {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wj-rotate-ccw {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes wj-particle-blink {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.9;  transform: scale(2);   }
+}
+
+@keyframes wj-pulse-ring {
+  0%   { transform: scale(1);    opacity: 0.18; }
+  100% { transform: scale(1.45); opacity: 0;    }
+}
+
+@keyframes wj-fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.wj-logo-root {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  filter: drop-shadow(0 0 40px rgba(99, 102, 241, 0.25));
+}
+
+.wj-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Rotating rings */
+.wj-ring-outer {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wj-rotate-cw 18s linear infinite;
+}
+
+.wj-ring-inner {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wj-rotate-ccw 12s linear infinite;
+}
+
+/* Floating particles */
+.wj-particle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wj-particle-blink 4s ease-in-out infinite;
+}
+
+/* Pulse ring */
+.wj-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wj-pulse-ring 2.8s ease-out 1.6s infinite;
+}
+
+/* W letter draw-on
+   Path length ≈ 480; starts hidden, draws in after a short delay. */
+.wj-w {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: wj-draw 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+/* J letter draw-on
+   Two subpaths total length ≈ 380; draws in after W finishes. */
+.wj-j {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: wj-draw 1s cubic-bezier(0.4, 0, 0.2, 1) 1.3s forwards;
+}
+
+/* Decorative text labels */
+.wj-label-mr {
+  animation: wj-fade-up 0.7s ease 0.3s both;
+}
+
+.wj-label-tag {
+  animation: wj-fade-up 0.7s ease 2.2s both;
+}
+
+.wj-divider {
+  animation: wj-fade-up 0.7s ease 2s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wj-ring-outer,
+  .wj-ring-inner   { animation: none; }
+  .wj-particle     { animation: none; opacity: 0.4; }
+  .wj-pulse        { animation: none; }
+  .wj-w            { stroke-dashoffset: 0; animation: none; }
+  .wj-j            { stroke-dashoffset: 0; animation: none; }
+  .wj-label-mr,
+  .wj-label-tag,
+  .wj-divider      { animation: none; opacity: 1; }
+}
+
+/* ─── Hero Text Animations ─────────────────────────────────────────────── */
+
+@keyframes hero-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-word-up {
+  from {
+    opacity: 0;
+    transform: translateY(36px) skewY(3deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewY(0deg);
+    filter: blur(0);
+  }
+}
+
+/* Base: hidden until animation fires */
+.hero-anim {
+  opacity: 0;
+  animation: hero-slide-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-anim-1 { animation-delay: 0.05s; }
+.hero-anim-2 { animation-delay: 0.18s; }
+.hero-anim-4 { animation-delay: 0.52s; }
+.hero-anim-5 { animation-delay: 0.68s; }
+
+/* Role words — clip-style pop-up */
+.hero-word {
+  opacity: 0;
+  display: inline-block;
+  animation: hero-word-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-word-1 { animation-delay: 0.30s; }
+.hero-word-2 { animation-delay: 0.45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim,
+  .hero-word { animation: none; opacity: 1; filter: none; transform: none; }
 }

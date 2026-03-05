@@ -152,7 +152,7 @@ export default function Portfolio() {
                     : "reveal-delay-2"
               }`}
             >
-              {ProjectCard(project)}
+              <ProjectCard {...project} />
             </div>
           ))}
         </div>

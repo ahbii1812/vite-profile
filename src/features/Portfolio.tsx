@@ -67,7 +67,7 @@ export default function Portfolio() {
             </div>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="p-2 -mr-2 text-white hover:text-blue-400 transition-colors rounded-full hover:bg-slate-900"
+              className="p-2 -mr-2 text-white hover:text-blue-400 transition-all duration-300 rounded-full hover:bg-slate-900 hover:scale-110"
               aria-label={isExpanded ? "Show less" : "Show more"}
             >
               {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
@@ -88,13 +88,13 @@ export default function Portfolio() {
             <div className="overflow-hidden">
               <div className="pt-2 pb-2 border-t border-slate-900">
                 {project.descriptions.map((item) => (
-                  <div>
+                  <div key={item.title}>
                     <div className="text-sm mt-4 mb-2 text-blue-500 font-bold">
                       {item.title}
                     </div>
                     <ul className="text-sm text-slate-400 space-y-2 list-disc pl-4">
                       {item.descriptions.map((job) => (
-                        <li>{job}</li>
+                        <li key={job}>{job}</li>
                       ))}
                     </ul>
                   </div>
@@ -125,7 +125,10 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-32 px-6 bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:row md:items-end justify-between mb-16 gap-4">
+        <div
+          data-reveal
+          className="reveal flex flex-col md:row md:items-end justify-between mb-16 gap-4"
+        >
           <div>
             <h2 className="text-4xl font-bold text-white tracking-tight">
               Portfolio
@@ -137,7 +140,21 @@ export default function Portfolio() {
         </div>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
-          {DATA.PORTFOLIO.map((project) => ProjectCard(project))}
+          {DATA.PORTFOLIO.map((project, index) => (
+            <div
+              key={project.appName}
+              data-reveal
+              className={`reveal ${
+                index % 3 === 0
+                  ? ""
+                  : index % 3 === 1
+                    ? "reveal-delay-1"
+                    : "reveal-delay-2"
+              }`}
+            >
+              <ProjectCard {...project} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

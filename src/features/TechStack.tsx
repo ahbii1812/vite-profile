@@ -15,7 +15,7 @@ export default function TechStack() {
   return (
     <section id="skills" className="pt-32 px-6 bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20 space-y-4">
+        <div data-reveal className="reveal text-center mb-20 space-y-4">
           <h2 className="text-4xl font-bold text-white tracking-tight">
             Technical Proficiency
           </h2>
@@ -27,10 +27,17 @@ export default function TechStack() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {DATA.TECH_STACK.map((skill) => (
+          {DATA.TECH_STACK.map((skill, index) => (
             <div
               key={skill.name}
-              className="group p-8 bg-slate-950 border border-slate-800 rounded-3xl hover:border-blue-500/50 transition-all duration-300"
+              data-reveal
+              className={`reveal group p-8 bg-slate-950 border border-slate-800 rounded-3xl hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1 ${
+                index % 3 === 0
+                  ? ""
+                  : index % 3 === 1
+                    ? "reveal-delay-1"
+                    : "reveal-delay-2"
+              }`}
             >
               <div
                 className={`${skill.color} mb-6 transition-transform duration-300 group-hover:scale-110`}

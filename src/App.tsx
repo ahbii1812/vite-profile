@@ -8,6 +8,7 @@ import { app } from "./features/FirebaseConfig";
 import { getAnalytics } from "firebase/analytics";
 import TopNav from "./features/TopNav";
 import { useEffect } from "react";
+import ChatWidget from "./features/ChatWidget";
 
 if (typeof window !== "undefined") {
   getAnalytics(app);
@@ -64,6 +65,9 @@ const App = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Chat */}
+      <ChatWidget />
     </div>
   );
 };
